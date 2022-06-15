@@ -1,0 +1,10 @@
+---
+- name: "Configure Apache"
+  copy:
+    src: /files/httpd.original
+    desc: /etc/httpd/conf/httpd.conf
+    owner: root
+    group: root
+    mode: '0755'
+  notify:
+  - restart apache
